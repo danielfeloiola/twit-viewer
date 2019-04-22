@@ -6,13 +6,22 @@
 
 {% block main %}
     <form action="/" method="post">
-        <div class="form-group" style="width: 50%; margin: 0 auto;">
-            <input autocomplete="off" autofocus class="form-control" name="usr" placeholder="Usuário" type="text" style="vertical-align:middle;">
-            <input autocomplete="off" autofocus class="form-control" name="id" placeholder="Id" type="text" style="vertical-align:middle;">
-            <button class="btn btn-primary" type="submit">Pesquisar</button>
+
+         <div class="form-row" style="width: 50%; margin: 0 auto; padding: 5px;">
+
+            <div class="col" >
+                <input autocomplete="off" autofocus class="form-control" name="usr" placeholder="Usuário" type="text" style="vertical-align:middle;">
+            </div>
+
+            <div class="col">
+                <input autocomplete="off" autofocus class="form-control" name="id" placeholder="Id" type="text" style="vertical-align:middle;">
+            </div>
+
+            <div class="col-1">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+
         </div>
-
-
     </form>
 
     <br>
