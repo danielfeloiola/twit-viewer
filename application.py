@@ -5,7 +5,6 @@ from tempfile import mkdtemp
 import requests
 
 
-
 # Configure application
 app = Flask(__name__)
 
@@ -19,12 +18,6 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
-
-
-# Configure session to use filesystem (instead of signed cookies)
-#app.config["SESSION_FILE_DIR"] = mkdtemp()
-#app.config["SESSION_PERMANENT"] = False
-#app.config["SESSION_TYPE"] = "filesystem"
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -44,12 +37,8 @@ def index():
         twt_json = twt_embed.json()
         twt_html = twt_json['html']
 
-        # Add to the iframe
-        #iframe = branca.element.IFrame(twt_html, width=280, height=320) # width=400, height=500
 
-        #mapa = tweets_map(usuario)
         return render_template("index.html", tweet=twt_html)
     else:
-        #return render_template("tweet.html")
         return render_template("index.html")
 
